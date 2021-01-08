@@ -1,0 +1,122 @@
+/**********************************
+ Program: Shop_Owner
+ Course: Object Oriented Programming 
+ Year: 2019/20 Trimester 1
+ Name: TOO YEE SHUEN 
+ ID: (1191201569)
+ Lecture Section: TC02
+ Tutorial Section: TT06
+ Email: 1191201569@student.mmu.edu.my
+ Phone: 011-56350930
+ **************************************/
+
+BEGIN
+	SET option=NULL, type=NULL
+	SET  confirm='', rpt=''
+
+	
+	DECLARE class ShopItem with object S
+	DECLARE class Book with object B inheritance from ShopItem
+	DECLARE class Magazine with object G inheritance from ShopItem
+	DECLARE class Movie with object M inheritance from ShopItem
+
+	CALL function loginPage() from object S
+	
+	DO{
+	Clear the screen	
+	CALL function S.displayMenu()
+	PRINT Please enter your option: 
+	GET option
+	Clear the screen
+	INPUT option
+	CASE based on option{
+		Case == 1
+			DISPLAY header of Product Display
+			PRINT Select type of Product
+			GET type
+			IF the type == 1
+				CALL class Book with object B
+				CALL function view_data() from object B
+			ELSE IF the type == 2
+				CALL class Book with object B
+				CALL function view_data() from object G
+			ELSE IF the type == 3
+				CALL class Book with object G
+				CALL function view_data() from object M
+			END IF
+
+		Case == 2
+			DISPLAY header of Insert Product
+			PRINT Select type of Product
+			GET type
+			IF the type == 1
+				CALL class Book with object B
+				CALL function insert_data() from object B
+			ELSE IF the type == 2
+				CALL class Book with object B
+				CALL function insert_data() from object G
+			ELSE IF the type == 3
+				CALL class Book with object G
+				CALL function insert_data() from object M
+			END IF
+
+		Case == 3
+			DISPLAY header of Update Product
+			PRINT Select type of Item
+			GET type
+			IF the type == 1
+				CALL class Book with object B
+				CALL function update_data() from object B
+			ELSE IF the type == 2
+				CALL class Book with object B
+				CALL function update_data() from object G
+			ELSE IF the type == 3
+				CALL class Book with object G
+				CALL function update_data() from object M
+			END IF
+
+		Case == 4
+			DISPLAY header of Delete Data
+			PRINT Select type of Item
+			GET type
+			IF the type == 1
+				CALL class Book with object B
+				CALL function del_data() from object B
+			ELSE IF the type == 2
+				CALL class Book with object B
+				CALL function del_data() from object G
+			ELSE IF the type == 3
+				CALL class Book with object G
+				CALL function del_data() from object M
+			END IF
+	
+		Case == 5
+			CALL function sales_data_analysis() from object S
+	
+		Case == 6
+			CALL the logout() function to exit the program
+				
+		Default
+			PRINT "You have entered an invalid number. \nPlease re-enter your option: "
+			GET option 
+
+	}WHILE(rpt == 'Y');
+	END DO
+	END WHILE
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

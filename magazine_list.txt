@@ -1,0 +1,15 @@
+MG01|Her World|20-08|SPH Magazines|300
+MG02|he Peak|20-09|The Peak Group|300
+MG03|he Rocket|20-07|DAP Malaysia|200
+MG05|alaxie|20-10|Star Public|700
+MG06|empak Starz|20-01|Kadokawa|500
+MG07|swaq|20-03|New Market|300
+MG08|echLife|20-05|Future Aus|500
+MG09|oxtel|20-06|Telstra|500
+MG10|egaZone|20-07|Elwood|700	
+MG11|C World|20-10|IDG|600
+MG12|usic Network|20-10|Radio Today|800
+MG13|imelight|20-01|Limelight Arts Media|100
+MG14|ig League|20-04|New Corp Aus|666
+MG15|irlfriend|20-09|Pacific Magazines|240
+MG16,Ciao,20-10,Shogakukan,100

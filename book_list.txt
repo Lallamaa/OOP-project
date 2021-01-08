@@ -1,0 +1,10 @@
+BK01,Hunger Games,Suzanne,Scholastic,200
+BK02,Harry Potter,J.K.Rowling,Scholastic,1000
+BK03,Vampires,Zoraida,Imprint,300
+BK04,Divergent,Veronica Roth,Katherine Tegen,200
+BK05,Maze Runner,James Dashner, Delacorte Press,400
+BK06,Shiver,Maggie,Scholastic,250
+BK07,Raybearer,JordanIfueko,Amulet Books,500
+BK08,The Black Kids,Christina,Simon&Schuster,100
+BK09,Fable,Adrienne Young,Wednesday Books,200
+BK10,A Golden Fury,Samantha Cohoe,Wednesday Books,600

@@ -1,0 +1,10 @@
+S01,149.90,3,Hunger Games,Scholastic,Book
+S02,168.50,3,Harry Potter,Scholastic,Book
+S03,134.80,4,Maze Runner,Delacorte Press,Book
+S04,59.00,2,PC World,IDG,Magazine
+S05,19.90,1,TechLife,Future Aus,Magazine
+S06,11.80,5,The Nun,New Line Cinema,Movie
+S07,18.20,1,Lucifer,Netflix,Movie
+S08,29.90,2,Hush,Wednesday Book,Movie
+S09,188.80,1,Vampires,Imprint,Book
+S10,299.90,2,Divergent,Katherine Tegen,Book

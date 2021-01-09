@@ -235,7 +235,7 @@ void ShopItem::loginPage(){
 	cin >> choice;
 	
 	if(choice == 1){	//if user chooses choice 1, will lead to the login page
-		file.open("login.txt", ios::in | ios::app);
+		file.open("text/login.txt", ios::in | ios::app);
 		cout << "\n\t\t=======================================" << endl;
 		cout << "\t\t=	       LOGIN PAGE 	      =" << endl;
 		cout << "\t\t=======================================" << endl << endl;
@@ -260,7 +260,7 @@ void ShopItem::loginPage(){
 	
 	}
 	else if(choice == 2){	//if user chooses choice 1, will lead to the Profile details changes page
-		file.open("login.txt", ios::in);
+		file.open("text/login.txt", ios::in);
 		system("CLS");
 		cout << "\n\t=======================================" << endl;
 		cout << "\t=	       PROFILE 	      =" << endl;
@@ -276,7 +276,7 @@ void ShopItem::loginPage(){
 				cout << "\n\t\tNew Username: " ;	
 				getline(cin, newName);		//get the latest Username
 				file.close();	
-				file.open("login.txt", ios::out);
+				file.open("text/login.txt", ios::out);
 				file << newName << "," << passwrd;		//store the latest Username
 				cout << "\n\tYour Username is successfully updated! " << endl;
 				cin.get();
@@ -291,7 +291,7 @@ void ShopItem::loginPage(){
 				cout << "\n\t\tNew Password: " ;
 				getline(cin, newPasswrd);		//get the latest Password
 				file.close();
-				file.open("login.txt", ios::out);
+				file.open("text/login.txt", ios::out);
 				file << uname << "," << newPasswrd;		//store the latest Password 
 				cout << "\n\tYour Password is successfully updated! " << endl;
 				cin.get();
@@ -321,7 +321,7 @@ struct print
 
 void Book::view_data(){
 	fstream fout;
-	fout.open("book_list.txt", ios::in | ios::out);
+	fout.open("text/book_list.txt", ios::in | ios::out);
 	cout << "\n\t\t+---------------------------------------------------------------------+"<< endl;
 	cout << "\t\t|		   		BOOK              		      |" << endl;
 	cout << "\t\t|---------------------------------------------------------------------|" << endl;
@@ -374,7 +374,7 @@ void Book::view_data(){
 }
 void Magazine::view_data(){
 	fstream fout;
-	fout.open("magazine_list.txt", ios::in | ios::out);
+	fout.open("text/magazine_list.txt", ios::in | ios::out);
 	cout << "\n\t\t+----------------------------------------------------------------------------------+"<< endl;
 	cout << "\t\t|		   		       MAGAZINE              		      	   |" << endl;
 	cout << "\t\t|----------------------------------------------------------------------------------|" << endl;
@@ -424,7 +424,7 @@ void Magazine::view_data(){
 }
 void Movie::view_data(){
 	fstream fout;
-	fout.open("movie_list.txt", ios::in | ios::out);
+	fout.open("text/movie_list.txt", ios::in | ios::out);
 	cout << "\n\t\t+-------------------------------------------------------------------------------+"<< endl;
 	cout << "\t\t|		   		    MOVIE              		      	        |" << endl;
 	cout << "\t\t|-------------------------------------------------------------------------------|" << endl;
@@ -483,8 +483,8 @@ void Book::insert_data(){
 	string line;
 
 	fstream file, fin;
-	file.open("book_list.txt", ios::out|ios::app);		
-	fin.open("total_book.txt", ios::out|ios::in|ios::app);
+	file.open("text/book_list.txt", ios::out|ios::app);		
+	fin.open("text/total_book.txt", ios::out|ios::in|ios::app);
 	// while reading the file until the last line
 	while(!fin.eof()){
 		fin >> total;		//get the number of the last id from the total_book textfile
@@ -517,7 +517,7 @@ void Book::insert_data(){
 		total = id;		//to make sure the total always remain as the last number of id
 		id++;
 	}
-	fin.open("total_book.txt", ios::out);
+	fin.open("text/total_book.txt", ios::out);
 	fin << total;		//store the last ID number
 	fin.close();
 	file.close();
@@ -528,8 +528,8 @@ void Magazine::insert_data(){
 	string line;
 	
 	fstream file, fin;
-	file.open("magazine_list.txt", ios::out|ios::app);	
-	fin.open("total_mag.txt", ios::out|ios::in|ios::app);
+	file.open("text/magazine_list.txt", ios::out|ios::app);	
+	fin.open("text/total_mag.txt", ios::out|ios::in|ios::app);
 	// while reading the file until the last line
 	while(!fin.eof()){
 		fin >> total;	//get the number of the last id from the total_book textfile
@@ -561,7 +561,7 @@ void Magazine::insert_data(){
 		total = id;			//to make sure the total always remain as the last number of id
 		id++;
 	}
-	fin.open("total_mag.txt", ios::out);
+	fin.open("text/total_mag.txt", ios::out);
 	fin << total;	//store the last ID number
 	fin.close();
 	file.close();
@@ -571,10 +571,10 @@ void Movie::insert_data(){
 	int add, total, count;
 	string line;
 	fstream file, fin;
-	file.open("movie_list.txt", ios::out|ios::app);
-	fin.open("total_mov.txt", ios::out);
+	file.open("text/movie_list.txt", ios::out|ios::app);
+	fin.open("text/total_mov.txt", ios::out);
 	fin.close();
-	fin.open("total_mov.txt", ios::out|ios::in|ios::app);	
+	fin.open("text/total_mov.txt", ios::out|ios::in|ios::app);	
 	// while reading the file until the last line	
 	while(!fin.eof()){
 		fin >> total;	//get the number of the last id from the total_book textfile
@@ -606,7 +606,7 @@ void Movie::insert_data(){
 		total = id;			//to make sure the total always remain as the last number of id
 		id++;	
 	}
-	fin.open("total_mov.txt", ios::out);
+	fin.open("text/total_mov.txt", ios::out);
 	fin << total;	//store the last ID number
 	fin.close();
 	file.close();
@@ -616,8 +616,8 @@ void Movie::insert_data(){
 //****************************************************
 void Book::update_data(){
 	fstream file, temp;
-	file.open("book_list.txt", ios::in);
-	temp.open("temp.txt", ios::out);
+	file.open("text/book_list.txt", ios::in);
+	temp.open("text/temp.txt", ios::out);
 	
 	string search, id, name, author, company, qty;
 	cout << "\n\n\t\tEnter Item ID: "; 
@@ -661,14 +661,14 @@ void Book::update_data(){
 	file.close();
 	temp.close();
 	//to replace temp file with list file
-	remove("book_list.txt");
-	rename("temp.txt", "book_list.txt");
+	remove("text/book_list.txt");
+	rename("text/temp.txt", "text/book_list.txt");
 }
 
 void Magazine::update_data(){
 	fstream file, temp;
-	file.open("magazine.txt", ios::in);
-	temp.open("temp.txt", ios::out);
+	file.open("text/magazine.txt", ios::in);
+	temp.open("text/temp.txt", ios::out);
 	
 	string search, id, name, author, company, qty;
 	cout << "\n\n\t\tEnter Item ID: "; 
@@ -713,15 +713,15 @@ void Magazine::update_data(){
 	file.close();
 	temp.close();
 	//to replace temp file with list file
-	remove("magzaine_list.txt");
-	rename("temp.txt", "magazine_list.txt");
+	remove("text/magzaine_list.txt");
+	rename("text/temp.txt", "text/magazine_list.txt");
 	
 }
 
 void Movie::update_data(){
 	fstream file, temp;
-	file.open("movie_list.txt", ios::in);
-	temp.open("temp.txt", ios::out|ios::app);
+	file.open("text/movie_list.txt", ios::in);
+	temp.open("text/temp.txt", ios::out|ios::app);
 	
 	string search, id, name, author, company, qty;
 	cout << "\n\n\t\tEnter Item ID: "; 
@@ -767,8 +767,8 @@ void Movie::update_data(){
 	file.close();
 	temp.close();
 	//to replace temp file with list file
-	remove("movie_list.txt");
-	rename("temp.txt", "movie_list.txt");
+	remove("text/movie_list.txt");
+	rename("text/temp.txt", "text/movie_list.txt");
 	
 }
 
@@ -778,8 +778,8 @@ void Movie::update_data(){
 void Book::del_data(){
 	string search;
 	fstream infile, outfile;
-	infile.open("book_list.txt", ios::in | ios::app);
-	outfile.open("temp.txt", ios::out);
+	infile.open("text/book_list.txt", ios::in | ios::app);
+	outfile.open("text/temp.txt", ios::out);
 	cout << "\n\t\tEnter Item ID you want to delete: ";
 	cin >> search;
 	// input the data from book_list text file and store the data in id, name, author, company and qty	
@@ -796,16 +796,16 @@ void Book::del_data(){
 	infile.close();
 	outfile.close();
 	//to replace temp file with list file
-	remove("book_list.txt");		//the file contain unwanted data is deleted
-	rename("temp.txt", "book_list.txt");
+	remove("text/book_list.txt");		//the file contain unwanted data is deleted
+	rename("text/temp.txt", "text/book_list.txt");
 }
 void Magazine::del_data(){
 	
 	string search;
 	
 	fstream infile, outfile;
-	infile.open("magazine_list.txt", ios::in | ios::app);
-	outfile.open("temp.txt", ios::out);
+	infile.open("text/magazine_list.txt", ios::in | ios::app);
+	outfile.open("text/temp.txt", ios::out);
 	cout << "\n\t\tEnter Item ID you want to delete: ";
 	cin >> search;
 	// input the data from magazine_list text file and store the data in id, name, pubYear, company and qty	
@@ -822,15 +822,15 @@ void Magazine::del_data(){
 	infile.close();
 	outfile.close();
 	//to replace temp file with list file
-	remove("magazine_list.txt");		//the file contain unwanted data is deleted
-	rename("temp.txt", "magazine_list.txt");
+	remove("text/magazine_list.txt");		//the file contain unwanted data is deleted
+	rename("text/temp.txt", "text/magazine_list.txt");
 }
 void Movie::del_data(){
 		string search;
 	
 	fstream infile, outfile;
-	infile.open("movie_list.txt", ios::in | ios::app);
-	outfile.open("temp.txt", ios::out);
+	infile.open("text/movie_list.txt", ios::in | ios::app);
+	outfile.open("text/temp.txt", ios::out);
 	cout << "\n\t\tEnter Item ID you want to delete: ";
 	cin >> search;
 	// input the data from movie_list text file and store the data in id, name, mactor, company and qty	
@@ -847,8 +847,8 @@ void Movie::del_data(){
 	infile.close();
 	outfile.close();
 	//to replace temp file with list file
-	remove("movie_list.txt");		//the file contain unwanted data is deleted
-	rename("temp.txt", "movie_list.txt");
+	remove("text/movie_list.txt");		//the file contain unwanted data is deleted
+	rename("text/temp.txt", "text/movie_list.txt");
 }
 
 //****************************************************
@@ -860,7 +860,7 @@ void ShopItem::sales_data_analysis(){
 	int quantity, totalPrice, totalSales=0, price1;
 
 	fstream fout, fout2;
-	fout.open("customer_sales.txt", ios::out|ios::in);
+	fout.open("text/customer_sales.txt", ios::out|ios::in);
 	
 	//display header of Sales Data Analysis
 	cout << "\t\t-------------------------------------------------------------------------------------------------" << endl;
